@@ -31,6 +31,7 @@ while(True):
 			if event.key == pygame.K_LEFT:
 				my_launcher.changeMagnitude(-5)
 			if (event.key == pygame.K_SPACE) and (not my_rock.isMoving()):
+				my_launcher.fire(my_rock)
 				print('FIRE matey!!')
 				
 
