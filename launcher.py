@@ -17,17 +17,17 @@ def class Launcher:
 		
 	def changeMagnitude(self, delta):
 		self.magnitude += delta
-		if self.magnitude > 100:
-			self.magnitude = 100
-		if self.magnitude <10:
-			self.magnitude = 10
+		if self.magnitude > MAX_MAG:
+			self.magnitude = MAX_MAG
+		if self.magnitude < MIN_MAG:
+			self.magnitude = MIN_MAG
 			
 	def changeAngle(self, delta):
 		self.angle += delta
-		if self.angle >90:
-			self.angle = 90
-		if self.angle <0:
-			self.angle = 0
+		if self.angle > MAX_ANGLE:
+			self.angle = MAX_ANGLE
+		if self.angle < MIN_ANGLE:
+			self.angle = MIN_ANGLE
 			
 	def draw(self, surf):
 		#need to do the math
