@@ -29,7 +29,13 @@ def class Launcher:
 		if self.angle < MIN_ANGLE:
 			self.angle = MIN_ANGLE
 			
+	def fire(self, rock):
+		rock.v_x = self.magnitude*np.cos(self.angle*np.pi/180)
+		rock.v_y = self.magnitude*np.sin(self.angle*np.pi/180)
+		
 	def draw(self, surf):
-		#need to do the math
-		pygame.draw.line(surf, color, start pos, stop pos, 5)
+		dx = self.magnitude*np.cos(self.angle*np.pi/180)
+		dy = self.magnitude*np.sin(self.angle*np.pi/180)
+		#not sure what 'np' is
+		pygame.draw.line(surf, color, dx, dy, 5)
 		
