@@ -1,22 +1,22 @@
 #!/usr/bin/python
 
-import pygame, sys
+import pygame
 from colors import *
 from pygame.locals import * #needed for QUIT function to work
-
+from game_func import *
 
 
 import launcher
 import rock
-import game_func
-
-def main():
-	pygame.init()
-	fpsClock = pygame.time.Clock()
 
 
+pygame.init()
+fpsClock = pygame.time.Clock()
+window = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+my_launcher = launcher.Launcher(0, WINDOWHEIGHT-20)
+my_rock = rock.Rock(0, WINDOWHEIGHT-20)
 
-while(True):
+while True:
 	draw_world(window)
 	
 	#Keyboard Read

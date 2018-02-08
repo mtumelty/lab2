@@ -2,16 +2,16 @@
 
 import math
 import pygame
-
+from colors import *
 MAX_MAG = 100
 MIN_MAG = 10
 MAX_ANGLE = 90
 MIN_ANGLE = 0
 
-def class Launcher:
+class Launcher:
 	def __init__(self, x, y):
-		self.x = 0
-		self.y = 0
+		self.x = x
+		self.y = y
 		self.magnitude = 30
 		self.angle = 45
 		
@@ -30,12 +30,12 @@ def class Launcher:
 			self.angle = MIN_ANGLE
 			
 	def fire(self, rock):
-		rock.v_x = self.magnitude*np.cos(self.angle*np.pi/180)
-		rock.v_y = self.magnitude*np.sin(self.angle*np.pi/180)
+		rock.v_x = self.magnitude*math.cos(self.angle*math.pi/180)
+		rock.v_y = self.magnitude*math.sin(self.angle*math.pi/180)
 		
 	def draw(self, surf):
-		dx = self.magnitude*np.cos(self.angle*np.pi/180)
-		dy = self.magnitude*np.sin(self.angle*np.pi/180)
-		#not sure what 'np' is
-		pygame.draw.line(surf, color, dx, dy, 5)
+		dx = self.magnitude * math.cos(self.angle*(math.pi/180))
+		dy = self.magnitude * math.sin(self.angle*(math.pi/180))
+	
+		pygame.draw.line(surf, RED, (self.x, self.y), (self.x+dx,self.y-dy), 3)
 		
