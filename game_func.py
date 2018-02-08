@@ -1,20 +1,16 @@
 #!/usr/bin/python
 
 import pygame,sys
+from colors import *
 
-WINDOWWIDTH = 500
-WINDOWHEIGHT = 400
-BLUE = (0,0,255)
-GREEN =(0,255,0)
-BLACK = (0,0,0)
-def draw_world(Surf):
-  Surf.fill(BLUE) #Fills the main Surface where Surf = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
-  pygame.draw.rect(Surf, GREEN, (0,380,500,20)) #Draws Green rectangle on surface
+def draw_world(window):
+  window.fill(BLUE) #Fills the main Surface where window = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+  pygame.draw.rect(window, GREEN, (0,380,500,20)) #Draws Green rectangle on surface
   Title = pygame.font.Font('freesansbold.ttf', 32)
   textSurfaceObj = Title.render('Launchr 1.0', True, BLACK, BLUE)
   textRectObj = textSurfaceObj.get_rect()
   textRectObj.center = (250,30)
-  Surf.blit(textSurfaceObj, textRectObj)
+  window.blit(textSurfaceObj, textRectObj)
 
 
 

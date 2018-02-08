@@ -1,6 +1,7 @@
 #!/usr/bin/python
 WINDOWWIDTH = 500
 WINDOWHEIGHT = 400
+
 BLUE = (0,0,255)
 GREEN =(0,255,0)
 RED = (255,0,0)
