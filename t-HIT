@@ -1,0 +1,15 @@
+GAME
+if(my_rock.y>HEIGHT)
+	my_rock.moveTO(0, HEIGHT-20)
+	print('you missed')
+if(my_target.hitBy(my_rock)):
+	my_rock.moveTO(0, HEIGHT-20)
+	print('HIT')
+	
+TARGET
+def hitBy(self, obj):
+	return self.rect.colliderect(obj.getRect())
+	
+ROCK
+	def getRect(self):
+		return self.r
