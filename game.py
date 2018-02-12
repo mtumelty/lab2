@@ -50,10 +50,12 @@ while True:
 			
 	#Game Logic
 	if FIRED and (my_rock.y<400):
-		my_rock.move(1.0/FPS)	
+		my_rock.move(1.0/FPS)
 	if isHit():
+		my_rock.moveTo(0, WINDOWHEIGHT-20)
 		print "Hit Target"
 	elif my_rock.y>(WINDOWHEIGHT-10):
+		my_rock.moveTo(0, WINDOWHEIGHT-20)
 		print "You missed loser"
 	
 			
