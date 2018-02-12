@@ -10,5 +10,6 @@ class Target:
     r= pygame.Rect((0,0,40,10))
     r.center = (self.x, self.y)
     pygame.draw.rect(surf, BLACK, r)
-  #def is_Hit(self): TODO
-  def hitBY(self, obj):
+
+  def hitBy(self, obj):
+    return self.rect.colliderect(obj.getRect())

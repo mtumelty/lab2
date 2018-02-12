@@ -53,9 +53,11 @@ while True:
 		my_rock.move(1.0/FPS)
 	if isHit():
 		my_rock.moveTo(0, WINDOWHEIGHT-20)
+		FIRED = False
 		print "Hit Target"
 	elif my_rock.y>(WINDOWHEIGHT-10):
 		my_rock.moveTo(0, WINDOWHEIGHT-20)
+		FIRED = False
 		print "You missed loser"
 	
 			
